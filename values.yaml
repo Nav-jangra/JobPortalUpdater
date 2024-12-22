@@ -1,0 +1,30 @@
+app:
+  name: "Job Portal Updater"
+  version: 1.0
+
+naukri:
+  username: "my_user_name or email"
+  password: "my_password"
+  mob: "my_phone"
+
+foundit:
+  username: "my_user_name or email"
+  password: "my_password"
+  mob: "my_phone"
+
+shine:
+  username: "my_user_name or email"
+  password: "my_password"
+  mob: "my_phone"
+
+resume: 
+  originalResumePath: "/address/to/my/resume.pdf"
+  modifiedResumePath: "/address/to/save/my/updated/resume.pdf"
+
+headless: False
+updatePDF: True
+
+updateProfiles:
+  naukri : True
+  foundIt: True
+  shine: True
