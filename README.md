@@ -16,19 +16,24 @@
 ## Installation
 
 ### Prerequisites
-- Python 3.8 or higher
+- Python 3.12 or higher
 - `pip` for package management
 
 ### Steps
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/JobPortalUpdater.git
+   git clone https://github.com/Nav-jangra/JobPortalUpdater.git
    ```
 2. Navigate to the project directory:
    ```bash
    cd JobPortalUpdater
    ```
-3. Install dependencies:
+3. Activate the virtual Env
+   ```bash
+   python3 -m venv virtual      # create virtual environment for installing dependencies
+   source virtual/bin/activate   # source ./.venv/bin/activate  # command for macOS/linux
+   ```
+4. Install dependencies:
    ```bash
    pip install -r requirements.txt
    ```
@@ -37,7 +42,7 @@
 
 ## Usage
 
-1. Configure the `config.json` file with your job portal credentials and preferences.
+1. Configure the `values.yaml` file with your job portal credentials and preferences.
 2. Run the application:
    ```bash
    python main.py
@@ -48,22 +53,35 @@
 
 ## Configuration
 
-Create a `config.json` file with the following structure:
-```json
-{
-  "shine": {
-    "username": "your_email",
-    "password": "your_password"
-  },
-  "naukri": {
-    "username": "your_email",
-    "password": "your_password"
-  },
-  "foundit": {
-    "username": "your_email",
-    "password": "your_password"
-  }
-}
+Update the `values.yaml` file with the following structure:
+```yaml
+naukri:
+  username: "my_user_name or email"
+  password: "my_password"
+  mob: "my_phone"
+
+foundit:
+  username: "my_user_name or email"
+  password: "my_password"
+  mob: "my_phone"
+
+shine:
+  username: "my_user_name or email"
+  password: "my_password"
+  mob: "my_phone"
+
+resume: 
+  originalResumePath: "/address/to/my/resume.pdf"
+  modifiedResumePath: "/address/to/save/my/updated/resume.pdf"
+
+headless: False  #for browser to work in backgroung
+updatePDF: True  # for updating and adding some invisible characters to resume 
+
+updateProfiles:
+  naukri : True  #True if you want your naukri profile updated
+  foundIt: True
+  shine: True
+
 ```
 
 ---
@@ -103,5 +121,5 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Contact
 
-For queries or support, contact **your_email@example.com** or raise an issue in the repository.
+For queries or support, raise an issue in the repository.
 
